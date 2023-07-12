@@ -1,0 +1,16 @@
+{
+  "name": "4track",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.3.2",
+    "tone": "^14.7.77"
+  }
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Track</title>
+
+    <link rel="stylesheet" href="output.css">
+    <script src="audiokeys.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
+</head>
+<body class="bg-black text-white">
+    <div class="flex-col items-center justify-center pt-10 px-5">
+        <h3>Track 1</h3>
+        <div class="flex justify-between items-center border-white rounded-lg border-2">
+            <div class="w-4/5">
+                <img src="silence.jpg" alt="signal" class="object-cover signal-image">
+            </div>
+            <div class="flex flex-col w-1/5">
+                <button id="record-button-one" class="bg-red-500 p-2 text-white flex justify-center rounded-tr-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+                    </svg>                  
+                </button>
+                <button id="stop-button-one" class="bg-red-500 p-2 text-white hidden flex justify-center rounded-tr-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                      </svg>                  
+                </button>
+                <button id="play-button-one" class="bg-green-500 p-2 text-white flex justify-center rounded-br-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                      </svg>                  
+                </button>
+            </div>
+        </div>
+        <br>
+        <h3>Track 2</h3>
+        <div class="flex justify-between items-center border-white rounded-lg border-2 relative">
+            <div id="backdrop-two" class="w-full h-full opacity-50 bg-gray-500 absolute"></div>
+            <div class="w-4/5">
+                <img src="silence.jpg" alt="signal" class="object-cover signal-image">
+            </div>
+            <div class="flex flex-col w-1/5">
+                <button id="record-button-two" class="bg-red-500 p-2 text-white flex justify-center rounded-tr-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+                    </svg>                  
+                </button>
+                <button id="stop-button-two" class="bg-red-500 p-2 text-white hidden flex justify-center rounded-tr-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                      </svg>                  
+                </button>
+                <button id="play-button-two" class="bg-green-500 p-2 text-white flex justify-center rounded-br-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                      </svg>                  
+                </button>
+            </div>
+        </div>
+        <br>
+        <h3>Track 3</h3>
+        <div class="flex justify-between items-center border-white rounded-lg border-2 relative">
+            <div id="backdrop-three" class="w-full h-full opacity-50 bg-gray-500 absolute"></div>
+            <div class="w-4/5">
+                <img src="silence.jpg" alt="signal" class="object-cover signal-image">
+            </div>
+            <div class="flex flex-col w-1/5">
+                <button id="record-button-three" class="bg-red-500 p-2 text-white flex justify-center rounded-tr-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+                    </svg>                  
+                </button>
+                <button id="stop-button-three" class="bg-red-500 p-2 text-white hidden flex justify-center rounded-tr-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                      </svg>                  
+                </button>
+                <button id="play-button-three" class="bg-green-500 p-2 text-white flex justify-center rounded-br-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                      </svg>                  
+                </button>
+            </div>
+        </div>
+        <br>
+        <h3>Track 4</h3>
+        <div class="flex justify-between items-center border-white rounded-lg border-2 relative">
+            <div id="backdrop-four" class="w-full h-full opacity-50 bg-gray-500 absolute"></div>
+            <div class="w-4/5">
+                <img src="silence.jpg" alt="signal" class="object-cover signal-image">
+            </div>
+            <div class="flex flex-col w-1/5">
+                <button id="record-button-four" class="bg-red-500 p-2 text-white flex justify-center rounded-tr-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+                    </svg>                  
+                </button>
+                <button id="stop-button-four" class="bg-red-500 p-2 text-white hidden flex justify-center rounded-tr-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                      </svg>                  
+                </button>
+                <button id="play-button-four" class="bg-green-500 p-2 text-white flex justify-center rounded-br-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                      </svg>                  
+                </button>
+            </div>
+        </div>
+        <br>
+        <div class="flex gap-5 justify-center items-center">
+            <button id="play-mix-button" class="bg-violet-500 p-4 text-white">Play Mix</button>
+            <button id="render-button" class="bg-violet-700 p-4 text-white">Render</button>
+            <div class="flex flex-col items-center justify-center">
+                <input type="text" id="latency-input" class="w-20 text-black" value="250">
+                <button id="latency-button" class="bg-violet-300 p-4 text-white">Set Latency</button>
+            </div>
+        </div>
+        <br>
+        <audio controls></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
