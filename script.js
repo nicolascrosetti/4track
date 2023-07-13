@@ -22,16 +22,27 @@ const signalImages = document.querySelectorAll('.signal-image');
 const playMixButton = document.getElementById('play-mix-button');
 const renderButton = document.getElementById('render-button');
 
+const constraints = {
+	audio: {
+		autoGainControl: false,
+		echoCancellation: false,
+		googAutoGainControl: false,
+		noiseSuppression: false
+	},
+	video: false
+}
+
 // Grabadora
 const recorder = new Tone.Recorder();
 // Microfono
-const mic = new Tone.UserMedia().connect(recorder);
+const mic = new Tone.UserMedia(constraints).connect(recorder);
 // Players
 let players = [];
 //Latencia
 const latencyInput = document.getElementById('latency-input');
 const latencyButton = document.getElementById('latency-button');
 let latencyValue = 250;
+
 
 let audioNotStarted = true;
 document.querySelectorAll('button').forEach(btn => {
